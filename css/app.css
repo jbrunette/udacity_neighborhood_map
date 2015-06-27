@@ -1,0 +1,47 @@
+html, body {
+	margin: 0px;
+}
+
+.row.search {
+	border-bottom: 2px solid blue;
+}
+
+.search table {
+	width: 100%;
+}
+
+.search table td.search_label {
+	padding: 10px;
+	width: 1%;
+	font-weight: bold;
+	background-color: lightblue;
+}
+
+.search table td.search_field {
+	cursor: text;
+	padding-left: 10px;
+}
+
+.search_field {
+	width: 90%;
+	border: 0;
+}
+
+table.location_list {
+	width: 100%;
+}
+
+table.location_list td {
+	border: 1px solid gray;
+	height: 40px;
+	padding: 10px;
+	cursor: default;
+}
+
+table.location_list td:hover {
+	background-color: #EEEEEE;
+}
+
+#map-canvas {;
+	height: 90%;
+}

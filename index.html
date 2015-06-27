@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link href="css/app.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-debug.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&v=3.exp"></script>
+    <script type="text/javascript" src="js/viewmodel.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row search">
+        <table>
+          <tr>
+            <td class="search_label">
+              Search
+            </td>
+            <td class="search_field">
+              <input class="search_field" data-bind="value: search_text, valueUpdate: ['afterkeydown'], hasFocus: true" /></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <table class="location_list">
+  	        <tbody data-bind="foreach: {data: locations_to_show, beforeRemove: hide_marker, afterAdd: show_marker}">
+  	          <tr data-bind="click: $parent.marker_click">
+  	            <td data-bind="text: label"></td>
+  	          </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="map-canvas" class="col-md-8"></div>
+      </div>
+    </div>
+  </body>
+</html>

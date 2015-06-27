@@ -1,0 +1,15 @@
+Neighborhood Map
+=================================
+This neighborhood map provides you with a map of the Waukesha, WI area with some markers pointing out points of interest.
+
+Installation Instructions
+=================================
+1. Download the program from the GitHub repository here to a folder on your computer: https://github.com/jbrunette/udacity_neighborhood_map
+2. Open the "index.html" file in the main folder.
+
+Using the Program
+=================================
+Upon opening the index.html file, you'll be greeted with a map of the Waukesha, WI area, a list of points of interest and a search box.
+Type something into the search box to filter the points of interest.
+Click an item in the list on the left or one of the markers in the map to get more information about that location and
+a link to yet more information.
