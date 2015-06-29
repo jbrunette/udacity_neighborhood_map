@@ -1,5 +1,7 @@
 html, body {
 	margin: 0px;
+	width: 100%;
+	height: 100%;
 }
 
 .row.search {
@@ -8,6 +10,10 @@ html, body {
 
 .search table {
 	width: 100%;
+}
+
+.row .col-md-4 {
+	height: 161px;
 }
 
 .search table td.search_label {
@@ -42,6 +48,10 @@ table.location_list td:hover {
 	background-color: #EEEEEE;
 }
 
-#map-canvas {;
+#map-canvas {
 	height: 90%;
+}
+
+div.marker_infowindow {
+	font-size: 2rem;
 }

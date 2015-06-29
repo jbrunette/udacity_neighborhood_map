@@ -1,21 +1,5 @@
-function ViewModel() {
+function ViewModel(map, maps_geocoder, infowindow_obj) {
 	var self = this;
-
-  ///////////////////////////////////////////////
-  // Google Maps API initialization
-  ///////////////////////////////////////////////
-  var mapOptions = {
-    center: { lat: 42.9959294, lng: -88.2169016},
-    zoom: 13
-  };
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-
-  // Create Geocoder object
-  var maps_geocoder = new google.maps.Geocoder();
-
-  // Create Google Maps InfoWindow object
-  var infowindow_obj = new google.maps.InfoWindow();
 
   ///////////////////////////////////////////////
   // Locations
@@ -79,6 +63,9 @@ function ViewModel() {
   // Handle click of marker (or marker's entry in location list)
   self.marker_click = function(location_data) {
 
+    // Center on marker
+    map.setCenter(location_data.marker.getPosition());
+
   	// Cause marker to bounce three times (about 700ms per bounce)
     location_data.marker.setAnimation(google.maps.Animation.BOUNCE);
     setTimeout(function() {
@@ -100,9 +87,12 @@ function ViewModel() {
         var page_urls = json[3];
 
         // Show infowindow
-		    infowindow_obj.setContent("<h1>" + location_data.label + "</h1><br>" + page_descs[0] + "<br><br><a href='" + page_urls[0] + "' target='_blank'>More information at Wikipedia</a>");
+		    infowindow_obj.setContent("<div class='marker_infowindow'><h1>" + location_data.label + "</h1><br>" + page_descs[0] + "<br><br><a href='" + page_urls[0] + "' target='_blank'>More information at Wikipedia</a></h1></div>");
 		    infowindow_obj.open(map, location_data.marker);
-			}
+			},
+      "error": function() {
+        alert("An error occured attempting to retrieve Wikipedia data for the map marker.  Perhaps your Internet connection has been disconnected?");
+      }
 		});
   };
 
