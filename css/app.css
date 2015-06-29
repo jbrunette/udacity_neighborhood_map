@@ -13,7 +13,7 @@ html, body {
 }
 
 .row .col-md-4 {
-	height: 161px;
+	height: 101px;
 }
 
 .search table td.search_label {
@@ -21,6 +21,7 @@ html, body {
 	width: 1%;
 	font-weight: bold;
 	background-color: lightblue;
+	font-size: 2vmax;
 }
 
 .search table td.search_field {
@@ -39,9 +40,10 @@ table.location_list {
 
 table.location_list td {
 	border: 1px solid gray;
-	height: 40px;
-	padding: 10px;
+	height: 20px;
+	padding: 5px;
 	cursor: default;
+	font-size: 1.2rem;
 }
 
 table.location_list td:hover {
@@ -53,5 +55,5 @@ table.location_list td:hover {
 }
 
 div.marker_infowindow {
-	font-size: 2rem;
+	font-size: 1.1rem;
 }

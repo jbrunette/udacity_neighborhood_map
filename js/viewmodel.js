@@ -87,7 +87,7 @@ function ViewModel(map, maps_geocoder, infowindow_obj) {
         var page_urls = json[3];
 
         // Show infowindow
-		    infowindow_obj.setContent("<div class='marker_infowindow'><h1>" + location_data.label + "</h1><br>" + page_descs[0] + "<br><br><a href='" + page_urls[0] + "' target='_blank'>More information at Wikipedia</a></h1></div>");
+		    infowindow_obj.setContent("<div class='marker_infowindow'><h5>" + location_data.label + "</h5><br>" + page_descs[0] + "<br><br><a href='" + page_urls[0] + "' target='_blank'>More information at Wikipedia</a></h1></div>");
 		    infowindow_obj.open(map, location_data.marker);
 			},
       "error": function() {
